@@ -1,0 +1,41 @@
+
+const nft = [];
+
+function mintNFT (_name, _position, _physical, _goals) {
+   const metadata = {
+      'name' : _name,
+      'position' : _position,
+      'physical': _physical,
+      'goals' : _goals
+   };
+   nft.push(metadata);
+   console.log('metadata of '+metadata.name+' minted successfully');
+}
+
+
+function listNFTs () {
+   console.log('Listing NFTs....')
+   for(var i=0;i<nft.length;i++)
+   {
+         console.log(i+1 + ':');
+         console.log('Name           : ' + nft[i].name);
+         console.log('Position       : '+ nft[i].position);
+         console.log('Physical point : '+nft[i].physical);
+         console.log('Goals          : '+ nft[i].goals);
+         
+   }
+}
+
+
+function getTotalSupply() {
+   console.log('Total numbber of NFTs minted : '+ nft.length)
+}
+
+
+mintNFT('Ronaldo', 'Winger', 99, 834);
+mintNFT('Benzema', 'Centre forward', 92, 324);
+mintNFT('Kroos', 'Midfielder', 89, 356);
+mintNFT('Bale', 'Winger', 83, 198);
+
+listNFTs();
+getTotalSupply();
